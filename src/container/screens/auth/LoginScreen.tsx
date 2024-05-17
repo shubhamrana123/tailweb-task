@@ -44,7 +44,7 @@ const LoginScreen = () => {
         },
     };
     const handleClickShowPassword = () => {
-        alert('kl')
+    
         setShowPassword(!showPassword);
     };
     const handleEmailChange = (e: any) => {
