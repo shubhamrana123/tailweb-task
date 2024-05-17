@@ -18,7 +18,6 @@ import { BorderColor } from '@material-ui/icons';
 import { useDispatch } from 'react-redux';
 import { loginApi } from '../../redux/actions/auth';
 import { STOP_LOADING, USER_DETAILS } from '../../redux/action-types';
-import BackgroundImage from "../../../assets/image/background-image-auth.png";
 import { validateEmail, validate_password } from '../../../config/helper-methods';
 const LoginScreen = () => {
     const [userName, setUserName] = useState('')
@@ -32,7 +31,7 @@ const LoginScreen = () => {
     const styles = {
         flex: 1,
         paperContainer: {
-            backgroundImage: `url(${BackgroundImage})`,
+           
             backgroundColor: '#FAFAFA',
             backgroundPosition: "center",
             backgroundSize: "cover",

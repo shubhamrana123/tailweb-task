@@ -1,10 +1,9 @@
-import {BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import InnerApp from "./InnerApp";
 import { Box } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material/styles";
 import { AppLoader } from "./container/component/loader";
-import './App.css'
 import { Alert,Snackbar } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { IS_NOTIFY } from "./container/redux/action-types";
