@@ -88,6 +88,7 @@ const Home = () => {
         setShowAddOrEditModal(true)
     }
     const handleLogout = () => {
+        localStorage.removeItem("user_info");
         dispatch({ type: USER_DETAILS, payload: null })
     }
     const handleEditStudentData = (index: any, currentStudentDetail: any) => {

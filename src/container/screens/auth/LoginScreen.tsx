@@ -57,13 +57,7 @@ const LoginScreen = () => {
     }
 
 
-    const handleUserNAme = (e: any) => {
-        setUserName(e.target.value)
-
-        const a = validateEmail(e.target.value)
-        return validateEmail(e.target.value)
-       
-    }
+   
     const handlePassword = (e: any) => {
         setPasswordErrorMEssage(validate_password(e.target.value))
         const ab = validate_password(e.target.value)
@@ -72,7 +66,7 @@ const LoginScreen = () => {
 
     }
     const handleLogin = () => {
-        // navigate('home')
+        navigate('home')
         const loginBody = {
             userName: userName,
             password: password
@@ -80,6 +74,10 @@ const LoginScreen = () => {
         dispatch(loginApi(loginBody, (res: any) => {
             if (res) {
                 dispatch({ type: USER_DETAILS, payload: loginBody })
+                localStorage.setItem(
+                    "user_info",
+                    JSON.stringify(loginBody)
+                  );
                 // navigate('/home')
                 setTimeout(() => {
                     dispatch({ type: STOP_LOADING })
