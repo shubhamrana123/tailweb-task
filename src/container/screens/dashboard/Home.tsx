@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { DELETE_STUDENT_DATA, EDIT_LIST, IS_NOTIFY, NOTIFY_MESSAGE, NOTIFY_TYPE, USERS_LIST, USER_DETAILS } from "../../redux/action-types"
 import NavBar from "../../component/navbar"
+import { useNavigate } from "react-router-dom"
 interface studentDetailProps {
     id: any,
     name: string,
@@ -24,7 +25,7 @@ const Home = () => {
 
     const [currentStudentDetail, setCurrentStudentDetail] = useState(null)
     const [currentIndex, setCurrentIndex] = useState(null)
-
+const navigate = useNavigate()
     const studentDetail: Array<studentDetailProps> = [
         { id: 1, name: 'ankit', subject: 'Maths', marks: 50 },
         { id: 2, name: 'ani', subject: 'Maths', marks: 50 },
@@ -88,6 +89,7 @@ const Home = () => {
         setShowAddOrEditModal(true)
     }
     const handleLogout = () => {
+        navigate('/')
         localStorage.removeItem("user_info");
         dispatch({ type: USER_DETAILS, payload: null })
     }

@@ -43,7 +43,7 @@ let parsedUserDetails = JSON.parse(user);
         ) : ( <>
 
         {    afterLoginRoutes.map((route) => (
-            <Route path={route.path} key={route.key} element={<RequiredGuard><route.component /></RequiredGuard>} />
+            <Route path={route.path} key={route.key} element={<route.component />} />
           ))}
                <Route path="/*" element={<NotFoundScreen />} />
         </>
