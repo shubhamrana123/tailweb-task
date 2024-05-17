@@ -12,7 +12,7 @@ function App() {
   const { isNotify, notifyMessage, notifyType } = useSelector(
     (state: any) => state?.notifyReducer
   );
-  alert('hi')
+
   const dispatch = useDispatch<any>()
   const renderRoutes = ()=>{
 
